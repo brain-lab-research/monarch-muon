@@ -1,0 +1,36 @@
+{
+  "model": "Qwen/Qwen2.5-7B",
+  "model_revision": "d149729398750b98c0af14eb82c78cfe92750796",
+  "dataset": "allenai/tulu-3-sft-mixture",
+  "dataset_revision": "b14afda60f1bbebe55d5d2fa1e4df5042f97f8be",
+  "train_examples": 10000,
+  "validation_examples": 512,
+  "test_examples": 512,
+  "seed": 20260929,
+  "sequence_length": 1024,
+  "epochs": 1,
+  "global_batch_size": 32,
+  "micro_batch_size": 1,
+  "gpus": 2,
+  "blocks": 2,
+  "adamw_lrs": [
+    1e-05,
+    3e-05,
+    0.0001
+  ],
+  "muon_lrs": [
+    0.0003,
+    0.001,
+    0.003
+  ],
+  "muon_adamw_lr": 3e-05,
+  "momentum": 0.95,
+  "adamw_betas": [
+    0.9,
+    0.95
+  ],
+  "adamw_eps": 1e-08,
+  "weight_decay": 0.1,
+  "warmup_fraction": 0.03,
+  "max_grad_norm": 1.0
+}

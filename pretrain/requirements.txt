@@ -1,0 +1,17 @@
+# PyTorch >= 2.8 with Triton (CUDA build). The FP8 arms additionally need an H100 (sm_90),
+# a CUDA toolkit (nvcc, cuBLASLt headers) and ninja to JIT-build src/models/fp8_batched.cpp.
+torch>=2.8
+triton
+numpy
+pyarrow
+transformers>=4.45.2
+tqdm
+wandb
+typing_extensions
+ninja
+
+# Tests
+pytest
+
+# Optional: Transformer Engine, only for bench/bench_monarch_te.py
+# transformer_engine[pytorch]

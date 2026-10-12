@@ -1,0 +1,9 @@
+# The experiments used torch 2.8.0 (CUDA 12) on H100 GPUs.
+torch
+# Exact pin: initialization D replaces the Qwen2 decoder-layer forward, whose signature changes across versions.
+transformers==4.51.3
+accelerate==1.6.0
+safetensors
+pyarrow
+scipy
+numpy

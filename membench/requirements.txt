@@ -1,0 +1,4 @@
+# torch with CUDA and Triton (the Linux CUDA wheels ship Triton); >= 2.4 for torch.library.custom_op
+torch>=2.4
+# used by the vendored APOLLO optimizer
+numpy

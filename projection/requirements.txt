@@ -1,0 +1,17 @@
+# Monarch projection study (Python 3.11; the study ran with torch 2.9.1 + CUDA 12.8).
+#   pip install torch==2.9.1 --index-url https://download.pytorch.org/whl/cu128
+#   pip install -r requirements.txt
+torch>=2.9              # torch._grouped_mm (--accel grouped_mm)
+# transformers MUST stay at 4.57.x: on 5.x Moonlight's remote code loads without an error but re-initialises the
+# weight matrices afterwards.
+transformers==4.57.3
+accelerate==1.15.0      # imported by lm_eval's HFLM, not listed by lm_eval itself
+lm_eval==0.4.13         # MMLU (cais/mmlu) and GSM8K (openai/gsm8k), loaded by the harness on first use
+datasets==5.0.0         # used by lm_eval
+safetensors
+numpy
+pyarrow                 # parquet calibration sources
+tqdm
+tiktoken                # Moonlight's tokenizer (tokenization_moonshot.py)
+matplotlib              # plots/
+pytest                  # python -m pytest projection -q

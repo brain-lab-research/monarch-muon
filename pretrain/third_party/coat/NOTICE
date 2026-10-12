@@ -1,0 +1,6 @@
+Portions adapted from NVlabs/COAT (https://github.com/NVlabs/COAT), Apache-2.0.
+Copyright 2024 NVIDIA CORPORATION & AFFILIATES. See LICENSE in this directory.
+
+Files under activation/ and utils/ are taken from COAT (some with local modifications);
+optimizer/triton_fp8_adamw.py and optimizer/triton_kernels.py are a Triton port of COAT's
+FP8 AdamW (CUDA) optimizer.

@@ -1,0 +1,15 @@
+{
+  "_comment": "prepare_calibration.py: ~1M tokens (512 x 2048) of web / code / math. The first 128 sequences are set aside (not used by the study, but they fix which sequences are evaluated); the other 384 are the evaluation part for KL / perplexity (the study uses the first 32 of them). Mixture: FineWeb-Edu (sample-10BT, field 'text', 0.5), codeparrot-clean (field 'content', 0.25), open-web-math (field 'text', 0.25), train splits, documents in their stored order. Nothing is downloaded: edit the paths below to LOCAL copies (a parquet file or a directory of *.parquet, a .jsonl file, or a .txt file per source; decompress .json.gz shards to .jsonl first). Relative paths are resolved from the working directory.",
+  "source": [
+    "name=web,parquet=calib_texts/fineweb-edu,field=text,weight=0.5",
+    "name=code,jsonl=calib_texts/codeparrot-clean.jsonl,field=content,weight=0.25",
+    "name=math,parquet=calib_texts/open-web-math,field=text,weight=0.25"
+  ],
+  "seq_len": 2048,
+  "n_sequences": 512,
+  "n_calib_sequences": 128,
+  "seed": 0,
+  "batch_size": 4,
+  "shard_size": 32,
+  "dtype": "bfloat16"
+}
